@@ -14,8 +14,21 @@ O primeiro passo foi analisar o manual de layout para exportação de dados disp
 
 ### Criação do Código em VBA
 
-Após a análise da documentação, desenvolvi o código em VBA com base nas orientações citadas no documento.   
+Após a análise da documentação, desenvolvi o código em VBA com base nas orientações citadas no manual: [Código de Extração](https://github.com/kawanbez/relatorio_prefeitura_barueri_vba/blob/main/codigo_de_extracao)  
+Em resumo, o código busca dentro do txt as orientações que defini em código, como por exemplo a posição e tamanho dos campos número da nota, data de emissão, tributação, razão social do tomador, etc. - [Arquivo txt de Exemplo](https://github.com/kawanbez/relatorio_prefeitura_barueri_vba/blob/main/48941143DE20201030%20-%20MODELO.txt) 
 
+### Definição do Processo
+
+Após a criação do código e obtenção das informações, definimos a seguinte rotina dentro do departamento de faturamento:
+
+* Download dos arquivos txt da Prefeitura de Barueri (cada arquivo se refere a um dia de faturamento)
+* Salvar os arquivos em uma pasta específica dentro do drive compartilhado (no arquivo de exemplo determinei a pasta: HostFolder = "C:\Users\kawan.bezerra\Downloads\NFs Barueri\", portanto, em caso de testes, altere o caminho do arquivo) - [Planilha de Exemplo](https://github.com/kawanbez/relatorio_prefeitura_barueri_vba)  
+* Após o salvamento dos arquivos, é feita a abertura da planilha em Excel com o código em VBA inserido e é realizado o start no código
+* Após o preenchimento da planilha com base na execução do código, é criada uma base mensal de faturamento composta pelos dados individuais das execuções diarias pelo time de faturametno
+
+### Conclusão
+
+Após a criação do código e criação do processo, o faturamento pôde novamente ser apurado e seguir para fechamento contábil e fiscal.
 
 
 
