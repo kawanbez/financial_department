@@ -1,3 +1,93 @@
+Option Explicit
+Public Sub importfile()
+    Dim FileSystem As Object
+    Dim HostFolder As String
+    Dim Filename As String
+    Dim numLinha1 As Long
+    Dim textline As String
+    
+    Application.ScreenUpdating = False
+    numLinha1 = 2
+    Result.Cells.ClearContents
+    Call Header
+    
+    Application.ScreenUpdating = False
+    
+    HostFolder = "C:\Users\kawan.bezerra\Downloads\Teste\"
+    Set FileSystem = CreateObject("Scripting.FileSystemObject")
+        
+    Filename = Dir(HostFolder & "*.txt")
+    '-----------------------------------------------
+    While Len(Filename) > 0 'IF NEXT FILE EXIST THEN
+    Open HostFolder & Filename For Input As #1
+        While Not EOF(1)
+            Line Input #1, textline
+            Call Maping(Mid(textline, 1, 1), textline, numLinha1)
+        Wend
+        Close #1
+    Filename = Dir
+    Wend
+    Application.ScreenUpdating = True
+End Sub
+
+Private Function Header()
+    Result.Cells(1, 1).Value = "Tipo do Registro"
+    Result.Cells(1, 2).Value = "Inscrição do Contribuinte"
+    Result.Cells(1, 3).Value = "Inicio do Período de Transferência"
+    Result.Cells(1, 4).Value = "Término do Período de Transferência"
+    Result.Cells(1, 5).Value = "Versão do Lay-Out"
+    Result.Cells(1, 6).Value = "Identificação da Remessa do Contribuinte"
+    Result.Cells(1, 7).Value = "Fim de Linha"
+    
+    Result.Cells(1, 8).Value = "Tipo do Registro"
+    Result.Cells(1, 9).Value = "Série da Nfe"
+    Result.Cells(1, 10).Value = "Nº da Nfe"
+    Result.Cells(1, 11).Value = "Data da Nfe"
+    Result.Cells(1, 12).Value = "Hora da Nfe"
+    Result.Cells(1, 13).Value = "Código de autencidade"
+    Result.Cells(1, 14).Value = "Série RPS"
+    Result.Cells(1, 15).Value = "Nº RPS"
+    Result.Cells(1, 16).Value = "Tributação"
+    Result.Cells(1, 17).Value = "ISS Retido"
+    Result.Cells(1, 18).Value = "Situação da Nfe"
+    Result.Cells(1, 19).Value = "Data do cancelamento da Nfe"
+    Result.Cells(1, 20).Value = "N.º Guia"
+    Result.Cells(1, 21).Value = "Data pagamento da guia"
+    Result.Cells(1, 22).Value = "CPF/ CNPJ do Tomador"
+    Result.Cells(1, 23).Value = "Razão Social / Nome do Tomador"
+    Result.Cells(1, 24).Value = "Endereço Logradouro Tomador"
+    Result.Cells(1, 25).Value = "Numero Logradouro Tomador"
+    Result.Cells(1, 26).Value = "Complemento Logradouro Tomador"
+    Result.Cells(1, 27).Value = "Bairro Logradouro Tomador"
+    Result.Cells(1, 28).Value = "Cidade Logradouro Tomador"
+    Result.Cells(1, 29).Value = "UF Logradouro Tomador"
+    Result.Cells(1, 30).Value = "CEP Logradouro Tomador"
+    Result.Cells(1, 31).Value = "Pais Logradouro Tomador"
+    Result.Cells(1, 32).Value = "e-mail Tomador"
+    Result.Cells(1, 33).Value = "Discriminação do Serviço"
+    Result.Cells(1, 34).Value = "Caracter de Fim de Linha"
+    
+    Result.Cells(1, 35).Value = "Tipo do Registro"
+    Result.Cells(1, 36).Value = "Quantidade do serviço"
+    Result.Cells(1, 37).Value = "Descrição do serviço"
+    Result.Cells(1, 38).Value = "Código do serviço"
+    Result.Cells(1, 39).Value = "Valor unitário do serviço"
+    Result.Cells(1, 40).Value = "Alíquota do serviço"
+    Result.Cells(1, 41).Value = "Caracter de Fim de Linha"
+    
+End Function
+
+Private Function Maping(indlayout As Integer, strFile As String, ByRef numLinha1 As Long)
+    Dim numcol1 As Long
+    numcol1 = 0
+    If indlayout = 1 Then
+        numcol1 = 0
+        
+        Result.Cells(numLinha1, numcol1 + 1).Value = Mid(strFile, 1, 1)
+        Result.Cells(numLinha1, numcol1 + 2).Value = Mid(strFile, 2, 7)
+        Result.Cells(numLinha1, numcol1 + 3).Value = Mid(strFile, 9, 8)
+        Result.Cells(numLinha1, numcol1 + 4).Value = Mid(strFile, 17, 8)
+        Result.Cells(numLinha1, numcol1 + 5).Value = Mid(strFile, 25, 6)
         Result.Cells(numLinha1, numcol1 + 6).Value = Mid(strFile, 31, 11)
         Result.Cells(numLinha1, numcol1 + 7).Value = Mid(strFile, 42, 1)
 
