@@ -1,3 +1,6 @@
+![background](https://github.com/kawanbez/relatorio_prefeitura_barueri_vba/blob/main/bg.jpg)
+
+
 # Extração Relatório de Faturamento: Prefeitura Barueri  - VBA
 
 Em Junho de 2019 a empresa em que atuo transferiu-se de São Paulo para Barueri (interior de São Paulo). Com isso, sua tributação começou a ser recolhida pela Prefeitura de Barueri.
@@ -5,3 +8,6 @@ Após a mudança, a área financeira teve que adaptar-se aos novos padrões de r
 Com isso, houve a necessidade de criação de um código em VBA que transformasse o txt da Prefeitura de Barueri para Excel de acordo com as antigas orientações do relatório de São Paulo.
 
 [Documentação Prefeitura](https://github.com/kawanbez/relatorio_prefeitura_barueri_vba/blob/main/NFE_Layout.pdf)
+
+
+
