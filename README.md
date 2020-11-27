@@ -1,4 +1,4 @@
-# financial_department
+# Extração Relatório de Faturamento: Prefeitura Barueri  - VBA
 Esse repositório contém projetos relacionados a área financeira
 
 Em Junho de 2019 a empresa em que atuo transferiu-se de São Paulo para Barueri (interior de São Paulo). Com isso, sua tributação começou a ser recolhida pela Prefeitura de Barueri.
