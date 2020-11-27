@@ -1,0 +1,46 @@
+        Result.Cells(numLinha1, numcol1 + 6).Value = Mid(strFile, 31, 11)
+        Result.Cells(numLinha1, numcol1 + 7).Value = Mid(strFile, 42, 1)
+
+    ElseIf indlayout = 2 Then
+        numcol1 = 7
+        Result.Cells(numLinha1, numcol1 + 1).Value = Mid(strFile, 1, 1)
+        Result.Cells(numLinha1, numcol1 + 2).Value = Mid(strFile, 2, 5)
+        Result.Cells(numLinha1, numcol1 + 3).Value = Mid(strFile, 7, 6)
+        Result.Cells(numLinha1, numcol1 + 4).Value = Mid(strFile, 13, 8)
+        Result.Cells(numLinha1, numcol1 + 5).Value = Mid(strFile, 21, 6)
+        Result.Cells(numLinha1, numcol1 + 6).Value = Mid(strFile, 27, 24)
+        Result.Cells(numLinha1, numcol1 + 7).Value = Mid(strFile, 51, 4)
+        Result.Cells(numLinha1, numcol1 + 8).Value = Mid(strFile, 55, 10)
+        Result.Cells(numLinha1, numcol1 + 9).Value = Mid(strFile, 65, 1)
+        Result.Cells(numLinha1, numcol1 + 10).Value = Mid(strFile, 66, 1)
+        Result.Cells(numLinha1, numcol1 + 11).Value = Mid(strFile, 67, 1)
+        Result.Cells(numLinha1, numcol1 + 12).Value = Mid(strFile, 68, 8)
+        Result.Cells(numLinha1, numcol1 + 13).Value = Mid(strFile, 76, 10)
+        Result.Cells(numLinha1, numcol1 + 14).Value = Mid(strFile, 86, 8)
+        Result.Cells(numLinha1, numcol1 + 15).Value = Mid(strFile, 94, 14)
+        Result.Cells(numLinha1, numcol1 + 16).Value = Mid(strFile, 108, 100)
+        Result.Cells(numLinha1, numcol1 + 17).Value = Mid(strFile, 208, 100)
+        Result.Cells(numLinha1, numcol1 + 18).Value = Mid(strFile, 308, 9)
+        Result.Cells(numLinha1, numcol1 + 19).Value = Mid(strFile, 317, 20)
+        Result.Cells(numLinha1, numcol1 + 20).Value = Mid(strFile, 337, 40)
+        Result.Cells(numLinha1, numcol1 + 21).Value = Mid(strFile, 377, 40)
+        Result.Cells(numLinha1, numcol1 + 22).Value = Mid(strFile, 417, 2)
+        Result.Cells(numLinha1, numcol1 + 23).Value = Mid(strFile, 419, 8)
+        Result.Cells(numLinha1, numcol1 + 24).Value = Mid(strFile, 427, 50)
+        Result.Cells(numLinha1, numcol1 + 25).Value = Mid(strFile, 477, 152)
+        Result.Cells(numLinha1, numcol1 + 26).Value = Mid(strFile, 629, 1000)
+        Result.Cells(numLinha1, numcol1 + 27).Value = Mid(strFile, 1629, 1)
+
+    ElseIf indlayout = 3 Then
+        numcol1 = 34
+        Result.Cells(numLinha1, numcol1 + 1).Value = Mid(strFile, 1, 1)
+        Result.Cells(numLinha1, numcol1 + 2).Value = Mid(strFile, 2, 6)
+        Result.Cells(numLinha1, numcol1 + 3).Value = Mid(strFile, 8, 60)
+        Result.Cells(numLinha1, numcol1 + 4).Value = Mid(strFile, 68, 9)
+        Result.Cells(numLinha1, numcol1 + 5).Value = CDbl(Mid(strFile, 78, 13) & "," & Right(Mid(strFile, 78, 15), 2))
+        Result.Cells(numLinha1, numcol1 + 6).Value = Mid(strFile, 92, 4)
+        Result.Cells(numLinha1, numcol1 + 7).Value = Mid(strFile, 96, 1)
+        numLinha1 = numLinha1 + 1
+    End If
+
+End Function
