@@ -1,6 +1,6 @@
 ![background](https://github.com/kawanbez/relatorio_prefeitura_barueri_vba/blob/main/bg.jpg)
 
-
+# [PORTUGUÊS] PT-BR
 # Extração Relatório de Faturamento: Prefeitura Barueri  - VBA
 
 Em Junho de 2019 a empresa em que atuo transferiu-se de São Paulo para Barueri (interior de São Paulo). Com isso, sua tributação começou a ser recolhida pela Prefeitura de Barueri.
@@ -30,5 +30,32 @@ Após a criação do código e obtenção das informações, definimos a seguint
 
 Após a criação do código e criação do processo, o faturamento pôde novamente ser apurado e seguir para fechamento contábil e fiscal.
 
+# [ENGLISH]
+# Billing Report Exportation: Barueri City - VBA
 
+In June 2019, the company I work for moved from São Paulo to Barueri. With that, its taxation began to be collected by the City Hall of Barueri.
+After the change, the financial area had to adapt to the new reporting standards from the City of Barueri, as previously in São Paulo, the report was made available in Excel and in Barueri it was only made available in txt. Due to this change, all the adapted reports and integrations with systems that were being adapted for the São Paulo City Hall needed to be updated to the new data export model.
+As a result, there was a need to create a code in VBA that would transform the txt from the City of Barueri to Excel according to the old guidelines of the São Paulo report.
 
+### Analyzing the Barueri City Hall Manual
+
+The first step was to analyze the layout manual for data export provided by the city of Barueri. In it we will find the layout guidelines that the txt file follows, with information such as: Field Description, Type, Size, Initial Position, Initial Position and Content:
+[City Documentation](https://github.com/kawanbez/relatorio_prefeitura_barueri_vba/blob/main/NFE_Layout.pdf)
+
+### Code Creation in VBA
+
+After analyzing the documentation, I developed the code in VBA based on the guidelines cited in the manual: [Extraction Code](https://github.com/kawanbez/relatorio_prefeitura_barueri_vba/blob/main/codigo_de_extracao)
+In summary, the code searches within the txt for the guidelines that I defined in code, such as the position and size of the invoice number, date of issue, taxation, corporate name of the borrower, etc. - [Example txt file](https://github.com/kawanbez/relatorio_prefeitura_barueri_vba/blob/main/48941143DE20201030%20-%20MODELO.txt)
+
+### Process Definition
+
+After creating the code and obtaining the information, we defined the following routine within the billing department:
+
+* Download txt files from Barueri City Hall (each file refers to one billing day)
+* Save the files in a specific folder inside the shared drive (in the example file I determined the folder: HostFolder = "C:\Users\kawan.bezerra\Downloads\NFs Barueri\", therefore, in case of tests, change the path from the file) - [Example Worksheet](https://github.com/kawanbez/relatorio_prefeitura_barueri_vba)
+* After saving the files, the Excel spreadsheet is opened with the VBA code inserted and the start in the code is performed
+* After filling in the worksheet based on the execution of the code, a monthly billing base is created consisting of the individual data of the daily executions by the billing team
+
+### Conclusion
+
+After creating the code and creating the process, the billing could be calculated again and proceed to accounting and tax closing.
